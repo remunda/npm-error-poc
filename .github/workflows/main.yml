@@ -4,10 +4,6 @@ run-name: ${{ github.actor }} started build
 on:
   workflow_dispatch:
 
-env:
-  NODE_DEBUG: "*"
-
-
 jobs:
   ci-js:
     runs-on: ubuntu-latest
