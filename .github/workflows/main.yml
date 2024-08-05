@@ -1,0 +1,23 @@
+name: ci-js
+run-name: ${{ github.actor }} started build
+
+on:
+  workflow_dispatch:
+
+env:
+  NODE_DEBUG: "*"
+
+
+jobs:
+  ci-js:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: current
+          cache: npm
+
+      - name: install
+        run: npm ci
